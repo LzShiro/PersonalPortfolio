@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import { Menu } from "lucide-react";
 
 export default function Header() {
-  // Cambia fondo al hacer scroll
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -23,21 +22,22 @@ export default function Header() {
           Andre.dev
         </Link>
 
-        {/* Desktop links */}
         <ul className="hidden gap-6 md:flex">
           {["about", "projects", "experience", "contact"].map((id) => (
             <li key={id}>
-              <Link
-                href={`#${id}`}
-                className="text-sm text-muted-foreground hover:text-foreground"
+              <button
+                onClick={() => {
+                  const el = document.getElementById(id);
+                  if (el) el.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="text-sm text-muted-foreground hover:text-foreground transition"
               >
                 {id.charAt(0).toUpperCase() + id.slice(1)}
-              </Link>
+              </button>
             </li>
           ))}
         </ul>
 
-        {/* Mobile hamburger (opcional, por simplicidad solo icono) */}
         <button className="md:hidden">
           <Menu size={24} />
         </button>
