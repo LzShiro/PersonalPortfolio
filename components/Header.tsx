@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Menu } from "lucide-react";
 
@@ -18,9 +17,16 @@ export default function Header() {
         ${scrolled ? "bg-background/80" : "bg-transparent"}`}
     >
       <nav className="mx-auto flex max-w-4xl items-center justify-between px-4 py-3">
-        <Link href="#home" className="font-semibold">
+        <button
+          onClick={() => {
+            const el = document.getElementById("home");
+            if (el) el.scrollIntoView({ behavior: "smooth" });
+            else window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+          className="font-semibold"
+        >
           Andre.dev
-        </Link>
+        </button>
 
         <ul className="hidden gap-6 md:flex">
           {["about", "projects", "experience", "contact"].map((id) => (
