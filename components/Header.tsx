@@ -2,14 +2,21 @@
 
 import { useState, useEffect } from "react";
 import { Menu } from "lucide-react";
+import { scrollToId } from "@/lib/scrollTo";
+import { useNavigation } from "@/context/NavigationContext";
 
 export default function Header() {
+  const { hasNavigated, setHasNavigated } = useNavigation();
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const handleScrollTo = (id: string) => {
+    scrollToId(id, hasNavigated, setHasNavigated);
+  };
 
   return (
     <header
@@ -18,11 +25,7 @@ export default function Header() {
     >
       <nav className="mx-auto flex max-w-4xl items-center justify-between px-4 py-3">
         <button
-          onClick={() => {
-            const el = document.getElementById("home");
-            if (el) el.scrollIntoView({ behavior: "smooth" });
-            else window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
+          onClick={() => handleScrollTo("home")}
           className="font-semibold"
         >
           Andre.dev
@@ -32,10 +35,7 @@ export default function Header() {
           {["about", "projects", "experience", "contact"].map((id) => (
             <li key={id}>
               <button
-                onClick={() => {
-                  const el = document.getElementById(id);
-                  if (el) el.scrollIntoView({ behavior: "smooth" });
-                }}
+                onClick={() => handleScrollTo(id)}
                 className="text-sm text-muted-foreground hover:text-foreground transition"
               >
                 {id.charAt(0).toUpperCase() + id.slice(1)}

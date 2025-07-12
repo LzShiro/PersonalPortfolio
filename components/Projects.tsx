@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
+import AnimatedSection from "./AnimatedSection";
 
 const projects = [
   {
@@ -45,53 +46,55 @@ export default function Projects() {
     <section className="max-w-5xl mx-auto py-20 px-4" id="projects">
       <h2 className="text-3xl font-bold mb-10 text-center">Proyectos</h2>
       <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
-        {projects.map((project) => (
-          <Card key={project.title} className="flex flex-col">
-            {project.image && (
-              <Image
-                src={project.image}
-                alt={project.title}
-                width={800}
-                height={450}
-                className="rounded-t-md object-cover h-40 w-full"
-              />
-            )}
-            <CardHeader>
-              <CardTitle>{project.title}</CardTitle>
-            </CardHeader>
-            <CardContent className="flex flex-col gap-2 text-sm">
-              <p className="text-muted-foreground">{project.description}</p>
-              <p>
-                <strong>Tecnologías:</strong> {project.tech.join(", ")}
-              </p>
-              <div className="flex gap-3 mt-2">
-                {project.github ? (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline text-primary text-xs"
-                  >
-                    GitHub
-                  </a>
-                ) : (
-                  <span className="text-xs text-muted-foreground italic">
-                    Proyecto privado
-                  </span>
-                )}
-                {project.demo && (
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline text-primary text-xs"
-                  >
-                    Ver demo
-                  </a>
-                )}
-              </div>
-            </CardContent>
-          </Card>
+        {projects.map((project, i) => (
+          <AnimatedSection key={project.title} delay={i * 0.2}>
+            <Card className="flex flex-col">
+              {project.image && (
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={800}
+                  height={450}
+                  className="rounded-t-md object-cover h-40 w-full"
+                />
+              )}
+              <CardHeader>
+                <CardTitle>{project.title}</CardTitle>
+              </CardHeader>
+              <CardContent className="flex flex-col gap-2 text-sm">
+                <p className="text-muted-foreground">{project.description}</p>
+                <p>
+                  <strong>Tecnologías:</strong> {project.tech.join(", ")}
+                </p>
+                <div className="flex gap-3 mt-2">
+                  {project.github ? (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline text-primary text-xs"
+                    >
+                      GitHub
+                    </a>
+                  ) : (
+                    <span className="text-xs text-muted-foreground italic">
+                      Proyecto privado
+                    </span>
+                  )}
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline text-primary text-xs"
+                    >
+                      Ver demo
+                    </a>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+          </AnimatedSection>
         ))}
       </div>
     </section>

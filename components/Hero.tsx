@@ -1,10 +1,23 @@
+"use client";
+import { useNavigation } from "@/context/NavigationContext";
+import { scrollToId } from "@/lib/scrollTo";
 import GithubIcon from "@/public/icons/github.svg";
 import LinkedinIcon from "@/public/icons/linkedin.svg";
 import TwitchIcon from "@/public/icons/twitch.svg";
+import { motion } from "framer-motion";
 
 export default function Hero() {
+  const { hasNavigated, setHasNavigated } = useNavigation();
+  const handleScrollTo = () => {
+    scrollToId("projects", hasNavigated, setHasNavigated);
+  };
   return (
-    <div className="flex min-h-[90vh] flex-col items-center justify-center gap-6 text-center">
+    <motion.div
+      className="flex min-h-[90vh] flex-col items-center justify-center gap-6 text-center"
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       <h1 className="text-5xl font-bold tracking-tight">
         Hola, soy <span className="text-primary">Andre Ricoy</span>
       </h1>
@@ -12,12 +25,12 @@ export default function Hero() {
         Software Engineer especializado en React, Next.js y soluciones cloud.
         Construyo plataformas escalables y experiencias web modernas.
       </p>
-      <a
-        href="#projects"
+      <button
+        onClick={() => {handleScrollTo()}}
         className="rounded-lg border px-6 py-3 text-sm font-medium transition hover:bg-accent"
       >
         Ver proyectos
-      </a>
+      </button>
       <div className="flex gap-4 justify-center mt-4">
         <a
           href="https://github.com/lzShiro"
@@ -41,6 +54,6 @@ export default function Hero() {
           <TwitchIcon className="w-6 h-6 hover:text-primary transition fill-current" />
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 }
