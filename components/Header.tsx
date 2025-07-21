@@ -58,7 +58,7 @@ export default function Header() {
         </ul>
         
 
-        <button className="md:hidden" onClick={() => console.log("Something")}>
+        <button className="md:hidden">
           <Menu size={24} />
         </button>
       </nav>
