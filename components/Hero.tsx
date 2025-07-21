@@ -3,7 +3,6 @@ import { useNavigation } from "@/context/NavigationContext";
 import { scrollToId } from "@/lib/scrollTo";
 import GithubIcon from "@/public/icons/github.svg";
 import LinkedinIcon from "@/public/icons/linkedin.svg";
-import TwitchIcon from "@/public/icons/twitch.svg";
 import { motion } from "framer-motion";
 
 export default function Hero() {
@@ -13,12 +12,12 @@ export default function Hero() {
   };
   return (
     <motion.div
-      className="flex min-h-[90vh] flex-col items-center justify-center gap-6 text-center"
+      className="flex min-h-[95vh] flex-col items-center justify-center gap-6 text-center"
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <h1 className="text-5xl font-bold tracking-tight">
+      <h1 className="text-6xl font-bold tracking-tight">
         Hola, soy <span className="text-primary">Andre Ricoy</span>
       </h1>
       <p className="max-w-xl text-xl text-muted-foreground">
@@ -27,7 +26,7 @@ export default function Hero() {
       </p>
       <button
         onClick={() => {handleScrollTo()}}
-        className="rounded-lg border px-6 py-3 text-sm font-medium transition hover:bg-accent"
+        className="rounded-lg border px-6 py-3 text-lg font-medium transition hover:bg-accent"
       >
         Ver proyectos
       </button>
@@ -37,21 +36,14 @@ export default function Hero() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <GithubIcon className="w-6 h-6 hover:text-primary transition fill-current" />
+          <GithubIcon className="w-10 h-10 hover:text-primary transition fill-current" />
         </a>
         <a
           href="https://www.linkedin.com/in/andre-ricoy/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <LinkedinIcon className="w-6 h-6 hover:text-primary transition fill-current" />
-        </a>
-        <a
-          href="https://twitch.tv/qshiroo"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <TwitchIcon className="w-6 h-6 hover:text-primary transition fill-current" />
+          <LinkedinIcon className="w-10 h-10 hover:text-primary transition fill-current" />
         </a>
       </div>
     </motion.div>

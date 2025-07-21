@@ -7,10 +7,10 @@ const projects = [
     title: "Auditoría de Automóviles",
     description:
       "Sistema web para revisión vehicular con carga de fotos y videos, validación de documentos y comentarios de revisores.",
-    tech: ["Next.js", "Azure Blob", "Sequelize", "Framer Motion"],
+    tech: ["Next.js", "TypeScript", "Azure Blob", "Sequelize", "Framer Motion"],
     github: null,
     demo: "https://youtube.com",
-    image: "/projects/AutosSanfer.jpg",
+    image: "/projects/Autos.jpg",
   },
   {
     title: "Sistema de Reservas",
@@ -18,8 +18,8 @@ const projects = [
       "Plataforma para gestionar horarios y reservas de espacios físicos en almacenes.",
     tech: ["Next.js", "TypeScript", "Sequelize", "Tailwind CSS"],
     github: null,
-    demo: "https://youtube.com",
-    image: "/projects/ReservasSanfer.jpg",
+    demo: "https://youtu.be/TObfj36uE9Y",
+    image: "/projects/Reservaciones.jpg",
   },
   {
     title: "Portafolio Personal",
@@ -27,17 +27,17 @@ const projects = [
       "Este sitio web. SPA moderna desarrollada con shadcn/ui, diseño responsive, navegación suave y estructura profesional.",
     tech: ["Next.js", "TypeScript", "Tailwind"],
     github: "https://github.com/andrericoy/portafolio",
-    demo: "https://andrericoy.vercel.app",
+    demo: "",
     image: "",
   },
   {
     title: "Proyecto final Desarrollador front-end de Meta",
     description:
       "Este sitio web. SPA moderna desarrollada con shadcn/ui, diseño responsive, navegación suave y estructura profesional.",
-    tech: ["Next.js", "TypeScript", "Tailwind"],
-    github: "https://github.com/andrericoy/portafolio",
-    demo: "https://andrericoy.vercel.app",
-    image: "",
+    tech: ["React", "JavaScript", "CSS"],
+    github: "https://github.com/LzShiro/finalProyectCoursera",
+    demo: "",
+    image: "/projects/little-lemon.png",
   },
 ];
 

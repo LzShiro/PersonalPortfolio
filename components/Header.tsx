@@ -4,9 +4,11 @@ import { useState, useEffect } from "react";
 import { Menu } from "lucide-react";
 import { scrollToId } from "@/lib/scrollTo";
 import { useNavigation } from "@/context/NavigationContext";
+import { ModeToggle } from "./ui/modetoggle";
 
 export default function Header() {
   const { hasNavigated, setHasNavigated } = useNavigation();
+  
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -30,19 +32,25 @@ export default function Header() {
         >
           Andre.dev
         </button>
+        
 
-        <ul className="hidden gap-6 md:flex">
+        <ul className="hidden gap-6 md:flex items-center">
           {["about", "projects", "experience", "contact"].map((id) => (
             <li key={id}>
               <button
                 onClick={() => handleScrollTo(id)}
-                className="text-sm text-muted-foreground hover:text-foreground transition"
+                className="text-m text-muted-foreground hover:text-foreground transition"
               >
                 {id.charAt(0).toUpperCase() + id.slice(1)}
               </button>
             </li>
+            
           ))}
+          <li>
+            <ModeToggle />
+          </li>
         </ul>
+        
 
         <button className="md:hidden">
           <Menu size={24} />
