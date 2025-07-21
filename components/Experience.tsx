@@ -1,52 +1,42 @@
+"use client";
 import AnimatedSection from "./AnimatedSection";
-
+import { useLang } from "@/context/LanguageContext";
 export default function Experience() {
+  const { t } = useLang();
   return (
     <AnimatedSection delay={0.2}>
       <section className="max-w-3xl mx-auto py-20 px-4" id="experience">
-        <h2 className="text-3xl font-bold mb-10 text-center">Experiencia</h2>
-
+        <h2 className="text-3xl font-bold mb-10 text-center">
+          {t.experience.tilte}
+        </h2>
         <div className="space-y-10">
-          {/* Sanfer */}
           <div>
-            <h3 className="text-xl font-semibold">Laboratorios Sanfer</h3>
+            <h3 className="text-xl font-semibold">
+              {t.experience.sanfer.title}
+            </h3>
             <p className="text-sm text-muted-foreground">
-              Desarrollador Full-stack | Octubre 2023 – Presente
+              {t.experience.sanfer.fullstack} | {t.experience.sanfer.date}
             </p>
             <ul className="list-disc list-inside mt-2 text-sm text-muted-foreground space-y-1">
-              <li>
-                Desarrollo de aplicaciones internas como el sistema de auditoría
-                de automóviles y la app de reservas.
-              </li>
-              <li>
-                Implementación de autenticación con Azure AD, roles de usuario y
-                subida de evidencia a Azure Blob Storage.
-              </li>
-              <li>
-                Diseño y modularización de interfaces con React, Next.js,
-                Tailwind y framer-motion.
-              </li>
+              <li>{t.experience.sanfer.ex1}.</li>
+              <li>{t.experience.sanfer.ex2}.</li>
+              <li>{t.experience.sanfer.ex3}.</li>
             </ul>
             <p className="mt-1 text-xs text-muted-foreground">
               Stack: Next.js, TypeScript, Tailwind, Azure, Sequelize
             </p>
           </div>
 
-          {/* Portafolio */}
           <div>
-            <h3 className="text-xl font-semibold">Sitio web personal</h3>
+            <h3 className="text-xl font-semibold">
+              {t.experience.website.title}
+            </h3>
             <p className="text-sm text-muted-foreground">
-              Desarrollador Full-stack | Julio 2025
+              {t.experience.website.fullstack} | {t.experience.website.date}
             </p>
             <ul className="list-disc list-inside mt-2 text-sm text-muted-foreground space-y-1">
-              <li>
-                Diseño y desarrollo de un portafolio profesional como SPA usando
-                App Router y shadcn/ui.
-              </li>
-              <li>
-                Implementación de dark/light mode, navegación suave, y
-                estructura modular.
-              </li>
+              <li>{t.experience.website.ex1}</li>
+              <li>{t.experience.website.ex2}</li>
             </ul>
             <p className="mt-1 text-xs text-muted-foreground">
               Stack: Next.js, Tailwind CSS, TypeScript, Framer Motion
@@ -54,24 +44,24 @@ export default function Experience() {
           </div>
 
           <div>
-            <h3 className="text-xl font-semibold">Proyectos destacados</h3>
-            <p className="text-sm text-muted-foreground">Grid | 2018 – 2023</p>
+            <h3 className="text-xl font-semibold">
+              {t.experience.Highlight.title}
+            </h3>
+            <p className="text-sm text-muted-foreground">
+              {" "}
+              {t.experience.Highlight.fullstack} | 2018 – 2023
+            </p>
             <ul className="list-disc list-inside mt-2 text-sm text-muted-foreground space-y-1">
               <li>
-                Desarrollo de una aplicación móvil de comercio electrónico,{" "}
-                <strong>MG Suplementos</strong>, usando React Native.
-                Implementación del módulo de ofertas mediante listas
-                horizontales y verticales (FlatLists) para categorías y
-                productos. La sección de ofertas generó más de 5,000 usuarios
-                activos mensuales y contribuyó al crecimiento de ventas.
+                {t.experience.Highlight.ex1}, <strong>MG Suplementos</strong>,{" "}
+                {t.experience.Highlight.ex2}
               </li>
               <li>
-                Diseño e implementación de un marcador digital de béisbol,
-                utilizado en estadios de <strong>Charros de Jalisco</strong> y{" "}
+                {t.experience.Highlight.ex3} <strong>Charros de Jalisco</strong> {t.experience.Highlight.ex4}{" "}
                 <strong>El Águila de Veracruz</strong>.
               </li>
               <li>
-                Desarrollo y mantenimiento de soluciones web interactivas para{" "}
+                {t.experience.Highlight.ex5}{" "}
                 <a
                   href="https://www.gridcompany.com.mx"
                   target="_blank"
@@ -80,8 +70,7 @@ export default function Experience() {
                 >
                   www.gridcompany.com.mx
                 </a>
-                , utilizadas como parte del portafolio corporativo de la
-                empresa.
+                , {t.experience.Highlight.ex6}.
               </li>
             </ul>
             <p className="mt-1 text-xs text-muted-foreground">

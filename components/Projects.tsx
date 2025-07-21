@@ -1,39 +1,67 @@
+"use client"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import AnimatedSection from "./AnimatedSection";
+import { useLang } from "@/context/LanguageContext";
+import { Project } from "@/types";
 
-const projects = [
+
+const projects: Project[] = [
   {
-    title: "Auditoría de Automóviles",
-    description:
-      "Sistema web para revisión vehicular con carga de fotos y videos, validación de documentos y comentarios de revisores.",
+    id: 1,
+    title: {
+      es: "Auditoría de Automóviles",
+      en: "Car Audit",
+    },
+    description: {
+      es:"Sistema web para revisión vehicular con carga de fotos y videos, validación de documentos y comentarios de revisores.",
+      en: "Web-based vehicle inspection system with photo and video uploads, document validation, and reviewer comments.",
+    },
     tech: ["Next.js", "TypeScript", "Azure Blob", "Sequelize", "Framer Motion"],
     github: null,
     demo: "https://youtube.com",
     image: "/projects/Autos.jpg",
   },
   {
-    title: "Sistema de Reservas",
-    description:
-      "Plataforma para gestionar horarios y reservas de espacios físicos en almacenes.",
+    id: 2,
+    title: {
+      es: "Sistema de reservas",
+      en: "Reservation System",
+    },
+    description: {
+      es: "Plataforma para gestionar horarios y reservas de espacios físicos en almacenes.",
+      en: "Platform for managing schedules and reservations of physical spaces in warehouses.",
+    },
     tech: ["Next.js", "TypeScript", "Sequelize", "Tailwind CSS"],
     github: null,
     demo: "https://youtu.be/TObfj36uE9Y",
     image: "/projects/Reservaciones.jpg",
   },
   {
-    title: "Portafolio Personal",
-    description:
-      "Este sitio web. SPA moderna desarrollada con shadcn/ui, diseño responsive, navegación suave y estructura profesional.",
+    id: 3,
+    title: {
+      es: "Portafolio Personal",
+      en: "Personal Portfolio",
+    },
+    description: {
+      es: "Este sitio web. SPA moderna desarrollada con shadcn/ui, diseño responsive, navegación suave y estructura profesional.",
+      en: "This website. A modern SPA developed with shadcn/ui, responsive design, smooth navigation, and a professional structure.",
+    },
     tech: ["Next.js", "TypeScript", "Tailwind"],
     github: "https://github.com/andrericoy/portafolio",
     demo: "",
     image: "",
   },
   {
-    title: "Proyecto final Desarrollador front-end de Meta",
-    description:
-      "Este sitio web. SPA moderna desarrollada con shadcn/ui, diseño responsive, navegación suave y estructura profesional.",
+    id: 4,
+    title: {
+      es: "Proyecto final Desarrollador front-end de Meta",
+      en: "Final Project Meta Front-End Developer",
+    },
+    description: {
+      es: "Este sitio web. SPA moderna desarrollada con shadcn/ui, diseño responsive, navegación suave y estructura profesional.",
+      en: "This website. A modern SPA developed with shadcn/ui, responsive design, smooth navigation, and a professional structure.",
+    },
     tech: ["React", "JavaScript", "CSS"],
     github: "https://github.com/LzShiro/finalProyectCoursera",
     demo: "",
@@ -42,29 +70,30 @@ const projects = [
 ];
 
 export default function Projects() {
+  const {t, lang} = useLang();
   return (
     <section className="max-w-5xl mx-auto py-20 px-4" id="projects">
-      <h2 className="text-3xl font-bold mb-10 text-center">Proyectos</h2>
+      <h2 className="text-3xl font-bold mb-10 text-center">{t.projects.title}</h2>
       <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
         {projects.map((project, i) => (
-          <AnimatedSection key={project.title} delay={i * 0.2}>
+          <AnimatedSection key={project.id} delay={i * 0.2}>
             <Card className="flex flex-col">
               {project.image && (
                 <Image
                   src={project.image}
-                  alt={project.title}
+                  alt={project.title[lang]}
                   width={800}
                   height={450}
                   className="rounded-t-md object-cover h-40 w-full"
                 />
               )}
               <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
+                <CardTitle>{project.title[lang]}</CardTitle>
               </CardHeader>
               <CardContent className="flex flex-col gap-2 text-sm">
-                <p className="text-muted-foreground">{project.description}</p>
+                <p className="text-muted-foreground">{project.description[lang]}</p>
                 <p>
-                  <strong>Tecnologías:</strong> {project.tech.join(", ")}
+                  <strong>{t.projects.technologies}:</strong> {project.tech.join(", ")}
                 </p>
                 <div className="flex gap-3 mt-2">
                   {project.github ? (
@@ -78,7 +107,7 @@ export default function Projects() {
                     </a>
                   ) : (
                     <span className="text-xs text-muted-foreground italic">
-                      Proyecto privado
+                      {t.projects.private}
                     </span>
                   )}
                   {project.demo && (
@@ -88,7 +117,7 @@ export default function Projects() {
                       rel="noopener noreferrer"
                       className="underline text-primary text-xs"
                     >
-                      Ver demo
+                      {t.projects.demo}
                     </a>
                   )}
                 </div>

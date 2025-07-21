@@ -7,7 +7,8 @@ import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
-    <main className="flex flex-col scroll-smooth">
+    <main className="flex flex-col scroll-smooth relative z-10">
+      
       <section id="home"><Hero /></section>
       <section id="about"><About /></section>
       <section id="projects"><Projects /></section>

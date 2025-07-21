@@ -5,9 +5,12 @@ import { Menu } from "lucide-react";
 import { scrollToId } from "@/lib/scrollTo";
 import { useNavigation } from "@/context/NavigationContext";
 import { ModeToggle } from "./ui/modetoggle";
+import { LanguageSwitcher } from "./ui/language-switcher";
+import { useLang } from "@/context/LanguageContext";
 
 export default function Header() {
   const { hasNavigated, setHasNavigated } = useNavigation();
+  const { t } = useLang()
   
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
@@ -19,7 +22,7 @@ export default function Header() {
   const handleScrollTo = (id: string) => {
     scrollToId(id, hasNavigated, setHasNavigated);
   };
-
+  
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur transition
@@ -41,7 +44,7 @@ export default function Header() {
                 onClick={() => handleScrollTo(id)}
                 className="text-m text-muted-foreground hover:text-foreground transition"
               >
-                {id.charAt(0).toUpperCase() + id.slice(1)}
+                {t.nav[id as keyof typeof t.nav]}
               </button>
             </li>
             
@@ -49,10 +52,13 @@ export default function Header() {
           <li>
             <ModeToggle />
           </li>
+          <li>
+            <LanguageSwitcher />
+          </li>
         </ul>
         
 
-        <button className="md:hidden">
+        <button className="md:hidden" onClick={() => console.log("Something")}>
           <Menu size={24} />
         </button>
       </nav>

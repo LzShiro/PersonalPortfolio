@@ -1,4 +1,5 @@
 "use client";
+import { useLang } from "@/context/LanguageContext";
 import { useNavigation } from "@/context/NavigationContext";
 import { scrollToId } from "@/lib/scrollTo";
 import GithubIcon from "@/public/icons/github.svg";
@@ -6,6 +7,7 @@ import LinkedinIcon from "@/public/icons/linkedin.svg";
 import { motion } from "framer-motion";
 
 export default function Hero() {
+  const { t } = useLang();
   const { hasNavigated, setHasNavigated } = useNavigation();
   const handleScrollTo = () => {
     scrollToId("projects", hasNavigated, setHasNavigated);
@@ -18,17 +20,18 @@ export default function Hero() {
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
       <h1 className="text-6xl font-bold tracking-tight">
-        Hola, soy <span className="text-primary">Andre Ricoy</span>
+        {t.hero.title} <span className="text-primary">Andre Ricoy</span>
       </h1>
       <p className="max-w-xl text-xl text-muted-foreground">
-        Software Engineer especializado en React, Next.js y soluciones cloud.
-        Construyo plataformas escalables y experiencias web modernas.
+        {t.hero.subtitle}
       </p>
       <button
-        onClick={() => {handleScrollTo()}}
+        onClick={() => {
+          handleScrollTo();
+        }}
         className="rounded-lg border px-6 py-3 text-lg font-medium transition hover:bg-accent"
       >
-        Ver proyectos
+        {t.hero.button}
       </button>
       <div className="flex gap-4 justify-center mt-4">
         <a
