@@ -33,7 +33,7 @@ export default function Header() {
           onClick={() => handleScrollTo("home")}
           className="font-semibold"
         >
-          Andre.dev
+          AndreRicoy.dev
         </button>
 
         <ul className="hidden gap-6 md:flex items-center">
