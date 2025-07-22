@@ -10,6 +10,16 @@ const en = {
     demo: "View demo",
     technologies: "Technologies",
   },
+
+  highlights: {
+    title: "Highlights",
+    private: "Private project",
+    demo: "View demo",
+    technologies: "Technologies",
+    link: "Link",
+  },
+
+
   contact: {
     title: "Contact me",
     name: "Your name",
@@ -25,6 +35,7 @@ const en = {
     about: "About",
     projects: "Projects",
     experience: "Experience",
+    highlights: "Highlights",
     contact: "Contact",
   },
 
@@ -38,7 +49,7 @@ const en = {
   },
 
   experience: { 
-    tilte:"Experiencia",
+    tilte:"Experience",
     sanfer: {
       title: "Sanfer Labs",
       fullstack: "Full-stack Developer",
@@ -49,11 +60,11 @@ const en = {
     },
 
     website: {
-      title: "Sanfer Labs",
+      title: "Personal website",
       fullstack: "Full-stack Developer",
       date: "July 2025",
-      ex1: "Designed and built a professional portfolio SPA using App Router and shadcn/ui",
-      ex2: "Implemented dark/light theme toggle, smooth navigation, and a modular codebase",
+      ex1: "Designed and built a professional portfolio SPA using App Router and shadcn/ui.",
+      ex2: "Implemented dark/light theme toggle, smooth navigation, and a modular codebase.",
     },
 
     Highlight: {

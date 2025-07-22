@@ -59,8 +59,8 @@ const projects: Project[] = [
       en: "Final Project Meta Front-End Developer",
     },
     description: {
-      es: "Este sitio web. SPA moderna desarrollada con shadcn/ui, diseño responsive, navegación suave y estructura profesional.",
-      en: "This website. A modern SPA developed with shadcn/ui, responsive design, smooth navigation, and a professional structure.",
+      es: "Una aplicación web front-end desarrollada como el proyecto final para la certificación de desarrolladores de Meta Front-end. Esta aplicación permite a los usuarios reservar una mesa, navegar el menú completo, hacer pedidos en línea y administrar su experiencia en el restaurante ficticio Mediterráneo Little Lemon.",
+      en: "A front-end web application developed as the final project for the Meta Front-End Developer Certification. This app allows users to book a table, browse the full menu, place online orders, and manage their experience at the fictional Mediterranean restaurant Little Lemon.",
     },
     tech: ["React", "JavaScript", "CSS"],
     github: "https://github.com/LzShiro/finalProyectCoursera",

@@ -11,6 +11,15 @@ const es = {
     demo: "Ver demo",
     technologies: "Tecnologías",
   },
+
+  highlights: {
+    title: "Destacado",
+    private: "Private project",
+    demo: "View demo",
+    technologies: "Technologies",
+    link: "Enlace",
+  },
+
   contact: {
     title: "Contáctame",
     name: "Tu nombre",
@@ -25,6 +34,7 @@ const es = {
     about: "Sobre mí",
     projects: "Proyectos",
     experience: "Experiencia",
+    highlights: "Destacado",
     contact: "Contacto",
   },
 

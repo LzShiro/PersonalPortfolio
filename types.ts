@@ -12,3 +12,12 @@ export type Project = {
   demo?: string;
   image?: string;
 };
+
+export type Highlight = {
+  id: number;
+  title: { en: string; es: string };
+  description: { en: string; es: string };
+  image?: string;
+  type?: { en: string; es: string };
+  link?: string;
+};

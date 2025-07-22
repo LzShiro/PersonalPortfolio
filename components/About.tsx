@@ -10,12 +10,12 @@ export default function About() {
       <section className="max-w-3xl mx-auto py-24 px-4">
         <h2 className="text-3xl font-bold mb-6 text-center">{t.about.title}</h2>
         <p className="text-lg leading-7 text-muted-foreground">
-          {t.about.ex}<strong>React</strong>, <strong>Next.js</strong> y{" "}
+          {t.about.ex} <strong>React</strong>, <strong>Next.js</strong> y{" "}
           <strong>TypeScript</strong>, {t.about.ex2}
         </p>
 
         <p className="mt-4 text-lg leading-7 text-muted-foreground">
-          {t.about.ex3} <strong>Twitch Partner</strong>, {t.about.ex4}.
+          {t.about.ex3} <strong>Twitch Partner</strong>, {t.about.ex4}
         </p>
 
         <h3 className="text-xl font-semibold mt-10 mb-4">

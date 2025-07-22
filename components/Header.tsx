@@ -1,17 +1,17 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu } from "lucide-react";
 import { scrollToId } from "@/lib/scrollTo";
 import { useNavigation } from "@/context/NavigationContext";
 import { ModeToggle } from "./ui/modetoggle";
 import { LanguageSwitcher } from "./ui/language-switcher";
 import { useLang } from "@/context/LanguageContext";
+import MobileMenu from "./MobileMenu";
 
 export default function Header() {
   const { hasNavigated, setHasNavigated } = useNavigation();
-  const { t } = useLang()
-  
+  const { t } = useLang();
+
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -22,7 +22,7 @@ export default function Header() {
   const handleScrollTo = (id: string) => {
     scrollToId(id, hasNavigated, setHasNavigated);
   };
-  
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur transition
@@ -35,10 +35,9 @@ export default function Header() {
         >
           Andre.dev
         </button>
-        
 
         <ul className="hidden gap-6 md:flex items-center">
-          {["about", "projects", "experience", "contact"].map((id) => (
+          {["about", "projects", "experience", "highlights", "contact" ].map((id) => (
             <li key={id}>
               <button
                 onClick={() => handleScrollTo(id)}
@@ -47,7 +46,6 @@ export default function Header() {
                 {t.nav[id as keyof typeof t.nav]}
               </button>
             </li>
-            
           ))}
           <li>
             <ModeToggle />
@@ -56,11 +54,10 @@ export default function Header() {
             <LanguageSwitcher />
           </li>
         </ul>
-        
 
-        <button className="md:hidden">
-          <Menu size={24} />
-        </button>
+        <div className="md:hidden">
+          <MobileMenu />
+        </div>
       </nav>
     </header>
   );
