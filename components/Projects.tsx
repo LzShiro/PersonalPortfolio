@@ -10,16 +10,16 @@ const projects: Project[] = [
   {
     id: 1,
     title: {
-      es: "Auditoría de Automóviles",
-      en: "Car Audit",
+      es: "Herramienta de captura y revisión de medios internos",
+      en: "Internal Media Capture & Review Tool",
     },
     description: {
-      es:"Sistema web para revisión vehicular con carga de fotos y videos, validación de documentos y comentarios de revisores.",
-      en: "Web-based vehicle inspection system with photo and video uploads, document validation, and reviewer comments.",
+      es:"Aplicación interna para la captura y gestión de archivos multimedia (fotos y videos), con cargas seguras, control de acceso por roles de usuario y actualizaciones de estado dinámicas.",
+      en: "Internal application for capturing and managing media files (photos and videos), including secure uploads, user role access, and dynamic status updates.",
     },
     tech: ["Next.js", "TypeScript", "Azure Blob", "Sequelize", "Framer Motion"],
     github: null,
-    demo: "https://youtube.com",
+    demo: "https://youtu.be/iHq-tpGrwbU",
     image: "/projects/Autos.jpg",
   },
   {
