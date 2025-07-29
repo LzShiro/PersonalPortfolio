@@ -48,9 +48,9 @@ const projects: Project[] = [
       en: "This website. A modern SPA developed with shadcn/ui, responsive design, smooth navigation, and a professional structure.",
     },
     tech: ["Next.js", "TypeScript", "Tailwind"],
-    github: "https://github.com/andrericoy/portafolio",
+    github: "https://github.com/LzShiro/PersonalPortfolio",
     demo: "",
-    image: "",
+    image: "/projects/portfolio.png",
   },
   {
     id: 4,
